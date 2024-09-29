@@ -1,0 +1,15 @@
+#version 330 core
+
+in vec3 FragColor;
+in vec2 FragTexture;
+
+uniform sampler2D FragTexture1;
+uniform sampler2D FragTexture2;
+
+out vec4 Fragment;
+
+void main(){
+  vec4 Texture = mix(texture(FragTexture1, FragTexture), texture(FragTexture2, FragTexture), 0.2);
+  vec4 Color = vec4(FragColor,1.0f);
+  Fragment = Texture * Color;
+}

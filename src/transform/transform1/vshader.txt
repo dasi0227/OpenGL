@@ -1,0 +1,9 @@
+#version 330 core
+
+layout (location = 0) in vec3 VertexCoord;
+
+uniform mat4 myTransform;
+
+void main() {
+  gl_Position = myTransform * vec4(VertexCoord, 1.0f);
+}

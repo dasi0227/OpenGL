@@ -1,0 +1,14 @@
+#version 330 core
+
+layout (location = 0) in vec3 VertexCoord;
+layout (location = 1) in vec3 VertexColor;
+layout (location = 2) in vec2 VertexTexture;
+
+out vec3 FragColor;
+out vec2 FragTexture;
+
+void main() {
+  gl_Position = vec4(VertexCoord, 1.0);
+  FragColor= VertexColor;
+  FragTexture = VertexTexture;
+}
